@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./Navbar.css"
-import { Logout } from './Logout'
+import { logout } from './logout'
 
 const Navbar = () => {
 
@@ -20,6 +20,7 @@ const Navbar = () => {
       setToken(localStorage.getItem("token"))
       setRole(localStorage.getItem("role"))
     }
+    const nav=useNavigate()
 
     window.addEventListener("storage", handleStorageChange)
 
@@ -54,9 +55,10 @@ const Navbar = () => {
 
             <button
               onClick={() => {
-                Logout()
+                logout()
                 setToken(null)
                 setRole(null)
+                nav("/login")
               }}
             >
               Logout
