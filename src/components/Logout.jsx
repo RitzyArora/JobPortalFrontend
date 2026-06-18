@@ -6,5 +6,5 @@ export const Logout = () => {
 
   window.dispatchEvent(new Event("storage"))
 
-  window.location.href = "/login"
+  window.location.href = "/auth/api/login"
 }
