@@ -6,6 +6,7 @@ import "./Navbar.css"
 import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+    const navigate=useNavigate()
 
   const [token, setToken] = useState(
     localStorage.getItem("token")
@@ -31,7 +32,7 @@ const Navbar = () => {
   }, [])
 
   const handleLogout = () => {
-    const navigate=useNavigate()
+  
     localStorage.removeItem("token");
     localStorage.removeItem("role");
 
