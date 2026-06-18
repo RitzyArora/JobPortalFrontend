@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Navbar.css"
-import { Logout } from './Logout'
+// import { Logout } from './Logout'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -29,6 +30,19 @@ const Navbar = () => {
 
   }, [])
 
+  const handleLogout = () => {
+    const navigate=useNavigate()
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+
+    window.dispatchEvent(new Event("storage"));
+
+    setToken(null);
+    setRole(null);
+
+    navigate("/login");
+  };
+
   return (
     <nav className='navbar'>
       <h2>Job Portal</h2>
@@ -52,7 +66,7 @@ const Navbar = () => {
               </Link>
             )}
 
-            <button
+            {/* <button
               onClick={() => {
                 Logout()
                 setToken(null)
@@ -60,7 +74,10 @@ const Navbar = () => {
               }}
             >
               Logout
-            </button>
+            </button> */}
+             <button onClick={handleLogout}>
+      Logout
+    </button>
           </>
         )}
 
