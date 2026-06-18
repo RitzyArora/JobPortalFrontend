@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API=axios.create({baseURL:"https://jobportalbackend-production-aa98.up.railway.app"})
+const API=axios.create({baseURL:"https://jobportalbackend-production-aa98.up.railway.app/api"})
 API.interceptors.request.use((req)=>{
     const token=localStorage.getItem("token")
     if(token)
