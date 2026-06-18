@@ -21,11 +21,11 @@ const JobsForm = () => {
         {
             if(id)
             {
-                await API.put(`/jobs/${id}`,formData)
+                await API.put(`/api/jobs/${id}`,formData)
                 alert("Job updated successfully!!")
             }
             else{
-            await API.post("/jobs",formData)
+            await API.post("/api/jobs",formData)
             alert("Job posted successfully!!")
         }
         navigate("/jobs")
@@ -49,7 +49,7 @@ const JobsForm = () => {
     const fetchJob=async()=>{
         try
         {
-            const response= await API.get(`/jobs/${id}`)
+            const response= await API.get(`/api/jobs/${id}`)
             setFormData(response.data)
         }
         catch(error)

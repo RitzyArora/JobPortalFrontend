@@ -12,7 +12,7 @@ const [jobs,setJobs]=useState([])
 useEffect(()=>{
   const fetchJobs=async()=>{
     try{
-    const response=await API.get("/jobs")
+    const response=await API.get("/api/jobs")
     setJobs(response.data)
     }
     catch(error){
@@ -25,7 +25,7 @@ useEffect(()=>{
 const handleDelete=async(id)=>{
 try
 {
-  await API.delete(`/jobs/${id}`)
+  await API.delete(`/api/jobs/${id}`)
   setJobs(prev=>prev.filter(job=>job._id!==id))
   alert("Job deleted successfully")
 }
