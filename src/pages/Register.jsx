@@ -64,7 +64,7 @@ import API from "../services/authService"
     } 
     try{
       setErrors({})
-      const response=await API.post("/auth/register",{
+      const response=await API.post("/api/auth/register",{
         name:formData.name,
         email:formData.email,
         password:formData.password,

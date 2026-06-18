@@ -45,7 +45,7 @@ export const Login = () => {
     }
 
     try {
-      const response = await API.post("/auth/login", {
+      const response = await API.post("/api/auth/login", {
         email: formData.email,
         password: formData.password
       })
