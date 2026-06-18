@@ -14,21 +14,21 @@ const Navbar = () => {
     localStorage.getItem("role")
   )
 
-  useEffect(() => {
+  //useEffect(() => {
 
     const handleStorageChange = () => {
       setToken(localStorage.getItem("token"))
       setRole(localStorage.getItem("role"))
     }
-    const nav=useNavigate()
+    //const nav=useNavigate()
 
-    window.addEventListener("storage", handleStorageChange)
+    //window.addEventListener("storage", handleStorageChange)
 
-    return () => {
-      window.removeEventListener("storage", handleStorageChange)
-    }
+    //return () => {
+     // window.removeEventListener("storage", handleStorageChange)
+    //}
 
-  }, [])
+  //}, [])
 
   return (
     <nav className='navbar'>
