@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import "./Navbar.css"
-import { logout } from './logout'
+import {logout} from './logout'
 
 const Navbar = () => {
 
