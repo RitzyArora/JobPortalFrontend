@@ -8,3 +8,4 @@ export const logout = () => {
 
  
 }
+export default logout
